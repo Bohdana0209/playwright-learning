@@ -1,0 +1,28 @@
+{
+  "name": "playwright-learning",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Bohdana0209/playwright-learning#readme",
+  "bugs": {
+    "url": "https://github.com/Bohdana0209/playwright-learning/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bohdana0209/playwright-learning.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.1",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0"
+  }
+}
