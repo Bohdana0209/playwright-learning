@@ -15,8 +15,8 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   // testDir: './tests',
   testMatch: /\/tests\/.*\.spec\.js/,
-  // globalSetup: require.resolve('./global-setup'),
-  // globalTeardown: require.resolve('./globalTeardown'),
+  //globalSetup: './global-setup',
+  //globalTeardown: './globalTeardown',
   // testIgnore: /.*\.*.ignore.spec\.js/,
   // grep: /@my-label/,
   /* Run tests in files in parallel */
@@ -40,9 +40,9 @@ export default defineConfig({
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     headless: true,
     viewport: { width: 1280, height: 720 },
-    trace: 'retain-on-failure',
-    video: "retain-on-failure",
-    screenshot: "only-on-failure",
+    trace: 'on',
+    video: "on",
+    screenshot: "on"
   },
 
   /* Configure projects for major browsers */

@@ -9,11 +9,11 @@ export default defineConfig([
     rules: {
       "semi": "error",
       "prefer-const": "error",
-      "indent": ["error", 2], 
+      //"indent": ["error", 2], 
       "quotes": ["warn", "single"],
       "object-curly-spacing": ["error", "always"],
       "space-before-blocks": ["error", "always"],
-      "keyword-spacing": ["error", { "before": true, "after": true }],
+     // "keyword-spacing": ["error", { "before": true, "after": true }],
       "no-unused-vars": ["warn"],
       "no-console": ["warn", { "allow": ["warn", "error"] }],
       "curly": ["error", "all"],
