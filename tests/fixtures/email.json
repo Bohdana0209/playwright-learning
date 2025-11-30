@@ -1,0 +1,28 @@
+[
+  {
+    "title": "empty field",
+    "input": { "email": "" },
+    "expected": { "message": "Email required" }
+  },
+  {
+    "title": "without @ symbol",
+    "input": { "email": "aqatestgmail.com" },
+    "expected": { "message": "Email is incorrect" }
+  },
+  {
+    "title": "without . symbol",
+    "input": { "email": "aqatest@gmailcom" },
+    "expected": { "message": "Email is incorrect" }
+  },
+  {
+    "title": "without domain name",
+    "input": { "email": "username@" },
+    "expected": { "message": "Email is incorrect" }
+  },
+  {
+    "title": "only spaces",
+    "input": { "email": "   " },
+    "expected": { "message": "Email is incorrect" }
+  }
+
+]

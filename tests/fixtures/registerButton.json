@@ -1,0 +1,46 @@
+[
+  {
+    "title": "button disabled when all fields empty",
+    "input": {
+      "name": "",
+      "lastName": "",
+      "email": "",
+      "password": "",
+      "repeatPassword": ""
+    },
+    "expected": { "enabled": false }
+  },
+  {
+    "title": "button disabled when email invalid",
+    "input": {
+      "name": "Bohdana",
+      "lastName": "Chelombytko",
+      "email": "bohdana@",
+      "password": "Qwerty123!",
+      "repeatPassword": "Qwerty123!"
+    },
+    "expected": { "enabled": false }
+  },
+  {
+    "title": "button disabled when passwords do not match",
+    "input": {
+      "name": "Bohdana",
+      "lastName": "Chelombytko",
+      "email": "test@example.com",
+      "password": "Qwerty123!",
+      "repeatPassword": "Qwerty123"
+    },
+    "expected": { "enabled": false }
+  },
+  {
+    "title": "button enabled when all fields valid",
+    "input": {
+      "name": "Bohdana",
+      "lastName": "Chelombytko",
+      "email": "test@example.com",
+      "password": "Qwerty123!",
+      "repeatPassword": "Qwerty123!"
+    },
+    "expected": { "enabled": true }
+  }
+]

@@ -13,8 +13,8 @@ import { defineConfig, devices } from '@playwright/test';
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  // testDir: './tests',
-  testMatch: /\/tests\/.*\.spec\.js/,
+  testDir: './tests',
+  //testMatch: /\/tests\/.*\.spec\.js/,
   //globalSetup: './global-setup',
   //globalTeardown: './globalTeardown',
   // testIgnore: /.*\.*.ignore.spec\.js/,
