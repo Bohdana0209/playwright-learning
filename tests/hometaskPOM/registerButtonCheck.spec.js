@@ -4,18 +4,17 @@ import RegistrationForm from "../../src/pageObjects/registration/RegistrationFor
 import registerButton from '../fixtures/registerButton.json' assert { type: 'json' };
 
 test.describe("Register button check", () => {
-
+    let form;
   test.beforeEach(async ({ page }) => {
     const homePage = new HomePage(page);
 
     await homePage.navigate();        
-    await homePage.openSignUpForm();  
+    form = await homePage.openSignUpForm(); 
   });
 
   for (const { title, input, expected } of registerButton) {
     test(title, async ({ page }) => {
-      const form = new RegistrationForm(page);
-
+      
       await form.fillName({ value: input.name });
       await form.fillLastName({ value: input.lastName });
       await form.fillEmail({ value: input.email });

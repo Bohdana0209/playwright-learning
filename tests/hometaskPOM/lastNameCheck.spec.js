@@ -4,18 +4,17 @@ import RegistrationForm from "../../src/pageObjects/registration/RegistrationFor
 import lastNames from '../fixtures/lastNames.json' assert { type: 'json' };
 
 test.describe("Last name validation", () => {
-
+  let form;
   test.beforeEach(async ({ page }) => {
     const homePage = new HomePage(page);
 
     await homePage.navigate();        
-    await homePage.openSignUpForm();  
+    form = await homePage.openSignUpForm(); 
   });
 
   for (const { title, input, expected } of lastNames) {
     test(title, async ({ page }) => {
-      const form = new RegistrationForm(page);
-
+      
       await form.fillLastName({ value: input.lastName });
 
       await expect(form.lastNameError).toHaveText(expected.message);
