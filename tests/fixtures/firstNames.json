@@ -1,0 +1,22 @@
+[
+  {
+    "title": "empty field",
+    "input": { "name": "" },
+    "expected": { "message": "Name required" }
+  },
+  {
+    "title": "too short, length 2..20",
+    "input": { "name": "B" },
+    "expected": { "message": "Name has to be from 2 to 20 characters long" }
+  },
+  {
+    "title": "invalid symbols",
+    "input": { "name": "Bohdana!*" },
+    "expected": { "message": "Name is invalid" }
+  },
+  {
+    "title": "too long, length 2..20",
+    "input": { "name": "ABCDEFGHIJKLMNOPQRSTU" },
+    "expected": { "message": "Name has to be from 2 to 20 characters long" }
+  }
+]

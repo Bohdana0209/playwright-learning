@@ -1,0 +1,22 @@
+[
+  {
+    "title": "empty field",
+    "input": { "lastName": "" },
+    "expected": { "message": "Last name required" }
+  },
+  {
+    "title": "too short, length 2..20",
+    "input": { "lastName": "C" },
+    "expected": { "message": "Last name has to be from 2 to 20 characters long" }
+  },
+  {
+    "title": "invalid symbols",
+    "input": { "lastName": "Test!*" },
+    "expected": { "message": "Last name is invalid" }
+  },
+  {
+    "title": "too long, length 2..20",
+    "input": { "lastName": "ABCDEFGHIJKLMNOPQRSTU" },
+    "expected": { "message": "Last name has to be from 2 to 20 characters long" }
+  }
+]
