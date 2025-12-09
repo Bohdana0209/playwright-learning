@@ -36,7 +36,7 @@ export default defineConfig({
     baseURL: config.baseURL,
     httpCredentials: config.httpCredentials,
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    headless: true,
+    headless: false,
     viewport: { width: 1280, height: 720 },
     trace: 'on',
     video: "on",
