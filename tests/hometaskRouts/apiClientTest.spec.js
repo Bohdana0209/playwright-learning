@@ -1,18 +1,17 @@
 import { expect } from "@playwright/test";
 import { apiCarsFixture as apiCars } from "../../src/customFixtures/apiCarsFixture.js";
 
-apiCars.describe.only("POST /api/cars", () => {
+const CARS_ENDPOINT = "/api/cars";
+
+apiCars.describe("POST /api/cars", () => {
   apiCars("Should create car with valid data", async ({ client }) => {
-    const response = await client.post(
-      "https://qauto.forstudy.space/api/cars",
-      {
-        data: {
-          carBrandId: 1,
-          carModelId: 1,
-          mileage: 122,
-        },
-      }
-    );
+    const response = await client.post(CARS_ENDPOINT, {
+      data: {
+        carBrandId: 1,
+        carModelId: 1,
+        mileage: 122,
+      },
+    });
 
     expect(response.status()).toBe(201);
 
@@ -26,30 +25,24 @@ apiCars.describe.only("POST /api/cars", () => {
   });
 
   apiCars("Should NOT create car without carBrandId", async ({ client }) => {
-    const response = await client.post(
-      "https://qauto.forstudy.space/api/cars",
-      {
-        data: {
-          carModelId: 1,
-          mileage: 100,
-        },
-      }
-    );
+    const response = await client.post(CARS_ENDPOINT, {
+      data: {
+        carModelId: 1,
+        mileage: 100,
+      },
+    });
 
     expect(response.status()).toBe(400);
   });
 
   apiCars("Should NOT create car with invalid mileage", async ({ client }) => {
-    const response = await client.post(
-      "https://qauto.forstudy.space/api/cars",
-      {
-        data: {
-          carBrandId: 1,
-          carModelId: 1,
-          mileage: -10, 
-        },
-      }
-    );
+    const response = await client.post(CARS_ENDPOINT, {
+      data: {
+        carBrandId: 1,
+        carModelId: 1,
+        mileage: -10,
+      },
+    });
 
     expect(response.status()).toBe(400);
   });

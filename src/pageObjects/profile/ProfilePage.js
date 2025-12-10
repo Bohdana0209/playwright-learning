@@ -9,10 +9,6 @@ export default class ProfilePage extends BasePage {
     this.profileName = page.locator("p.profile_name.display-4");
   }
 
-  async navigate() {
-    await this.page.goto("/panel/profile");
-  }
-
   async assertProfileName(expected) {
     await expect(this.profileName).toHaveText(expected);
   }
