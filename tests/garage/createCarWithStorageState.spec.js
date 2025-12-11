@@ -1,6 +1,6 @@
 import { userFixture } from "../../src/customFixtures/userGaragePage.js";
 
-userFixture.describe.only("Garage", () => {
+userFixture.describe("Garage", () => {
   userFixture("Create car — simple test", async ({ garagePage }) => {
 
   const car = {
