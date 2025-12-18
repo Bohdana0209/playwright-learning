@@ -9,7 +9,7 @@ const mockedProfile = {
   },
 };
 
-profileFixture.describe.only("Profile mock", () => {
+profileFixture.describe("Profile mock", () => {
   profileFixture(
     "Should mock /api/users/profile and verify UI",
     async ({ page, profilePage }) => {
